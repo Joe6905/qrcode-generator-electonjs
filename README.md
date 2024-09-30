@@ -1,95 +1,78 @@
-# boolean
+# Hacker-Themed QR Code Generator
 
-boolean converts lots of things to boolean.
+This is a simple QR Code generator web app with a hacker-themed design. Users can input text, generate a QR code, and download the QR code as a JPEG. The UI is inspired by the classic "Matrix" theme, with green and black colors and background animations.
 
-## Status
+## Features
 
-| Category         | Status                                                                                                                                     |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Version          | [![npm](https://img.shields.io/npm/v/boolean)](https://www.npmjs.com/package/boolean)                                                      |
-| Dependencies     | ![David](https://img.shields.io/david/thenativeweb/boolean)                                                                                |
-| Dev dependencies | ![David](https://img.shields.io/david/dev/thenativeweb/boolean)                                                                            |
-| Build            | ![GitHub Actions](https://github.com/thenativeweb/boolean/workflows/Release/badge.svg?branch=main) |
-| License          | ![GitHub](https://img.shields.io/github/license/thenativeweb/boolean)                                                                      |
+- Generate QR codes based on user input
+- Download the generated QR code as a JPEG image
+- Hacker-inspired UI with green and black colors
+- Matrix background animation
 
-## Installation
+## Demo
 
-```shell
-$ npm install boolean
+You can see the app live in action by cloning this repository and running it locally.
+
+## Preview
+
+![QR Code Generator Preview](preview_image_link)
+
+## Technologies Used
+
+- HTML
+- CSS (Flexbox for layout, custom styles for hacker theme)
+- JavaScript (QR Code generation logic, save as JPEG)
+- Matrix background animation using JavaScript
+
+## How to Run Locally
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/hacker-themed-qrcode-generator.git
+   cd hacker-themed-qrcode-generator
+   ```
+
+2. **Open `index.html` in your browser:**
+   You can open the `index.html` file directly in any modern web browser.
+
+## Usage
+
+1. Enter the text you want to generate a QR code for in the input field.
+2. Click the **Generate QR Code** button.
+3. The QR code will be displayed in the center of the screen.
+4. To save the QR code as a JPEG, click the **Save as JPEG** button.
+
+## Code Explanation
+
+### JavaScript Functionality
+
+- The script uses the `QRCode.js` library to generate a QR code based on user input.
+- A download button is provided to save the generated QR code as a `.jpeg` image.
+- The matrix-style background animation is written in vanilla JavaScript, inspired by the Matrix movie theme.
+
+### UI Styling
+
+- The overall layout is centered using Flexbox.
+- The app has a hacker-inspired color palette (green and black).
+- Hover effects are applied to buttons to enhance interactivity.
+- The QR code is generated inside a container with a green border, keeping it aligned with the theme.
+
+## Folder Structure
+
+```bash
+.
+├── index.html          # Main HTML file
+├── style.css           # CSS for styling the page
+├── script.js           # JavaScript for QR code generation and matrix animation
+└── qrcode.min.js       # QR Code generation library
 ```
 
-## Quick start
+## Future Enhancements
 
-First you need to add a reference to boolean in your application:
+- Add error correction level options for the QR code.
+- Allow users to choose different themes or customize the colors.
+- Implement the option to scan a QR code directly within the app.
 
-```javascript
-const { boolean, isBooleanable } = require('boolean');
-```
+## License
 
-If you use TypeScript, use the following code instead:
-
-```typescript
-import { boolean, isBooleanable } from 'boolean';
-```
-
-To verify a value for its boolean value, call the `boolean` function and provide the value in question as parameter:
-
-```javascript
-console.log(boolean('true')); // => true
-```
-
-The `boolean` function considers the following values to be equivalent to `true`:
-
--   `true` (boolean)
--   `'true'` (string)
--   `'TRUE'` (string)
--   `'t'` (string)
--   `'T'` (string)
--   `'yes'` (string)
--   `'YES'` (string)
--   `'y'` (string)
--   `'Y'` (string)
--   `'on'` (string)
--   `'ON'` (string)
--   `'1'` (string)
--   `1` (number)
-
-In addition to the primitive types mentioned above, boolean also supports their object wrappers `Boolean`, `String`, and `Number`.
-
-_Please note that if you provide a `string` or a `String` object, it will be trimmed._
-
-All other values, including `undefined` and `null` are considered to be `false`.
-
-### Figuring out whether a value can be considered to be boolean
-
-From time to time, you may not want to directly convert a value to its boolean equivalent, but explicitly check whether it looks like a boolean. E.g., although `boolean('F')` returns `false`, the string `F` at least looks like a boolean, in contrast to something such as `123` (for which `boolean(123)` would also return `false`).
-
-To figure out whether a value can be considered to be a boolean, use the `isBooleanable` function:
-
-```javascript
-console.log(isBooleanable('true')); // => true
-```
-
-The `isBooleanable` function considers all of the above mentioned values to be reasonable boolean values, and additionally, also the following ones:
-
--   `false` (boolean)
--   `'false'` (string)
--   `'FALSE'` (string)
--   `'f'` (string)
--   `'F'` (string)
--   `'no'` (string)
--   `'NO'` (string)
--   `'n'` (string)
--   `'N'` (string)
--   `'off'` (string)
--   `'OFF'` (string)
--   `'0'` (string)
--   `0` (number)
-
-## Running quality assurance
-
-To run quality assurance for this module use [roboter](https://www.npmjs.com/package/roboter):
-
-```shell
-$ npx roboter
-```
+This project is open-source and available under the [MIT License](LICENSE).
