@@ -28,7 +28,7 @@ You can see the app live in action by cloning this repository and running it loc
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/hacker-themed-qrcode-generator.git
+   git clone https://github.com/joe6905/hacker-themed-qrcode-generator.git
    cd hacker-themed-qrcode-generator
    ```
 
