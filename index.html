@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-       <div id="content" >
- 
-    <canvas id="matrixRain"></canvas>
+    <div id="content">
+        <!-- Matrix rain canvas -->
+        <canvas id="matrixRain"></canvas>
 
-    <div class="container">
-        <h1>QR Code Generator</h1>
-        <input type="text" id="qrText" placeholder="Enter text or URL" />
-        <button id="generateBtn">Generate QR Code</button>
-        <div id="qrcode"></div>
-        <button id="saveBtn" style="display:none;">Save as JPEG</button>
+        <!-- QR Code Generator UI -->
+        <div class="container">
+            <h1>QR Code Generator</h1>
+            <input type="text" id="qrText" placeholder="Enter text or URL" />
+            <button id="generateBtn">Generate QR Code</button>
+            <div id="qrcode"></div>
+            <button id="saveBtn" style="display:none;">Save as JPEG</button>
+        </div>
     </div>
-        
-    </div>
+
+    <!-- QR Code library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Custom JS files -->
     <script src="script.js"></script>
     <script src="matrix.js"></script>
 </body>
