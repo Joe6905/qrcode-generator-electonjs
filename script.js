@@ -91,3 +91,25 @@ document.getElementById('generateBtn').addEventListener('click', function() {
         saveBtn.style.display = 'none';  // Hide save button if no valid text
     }
 });
+const content = document.getElementById('content');
+
+// Function to toggle fullscreen
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        content.requestFullscreen().catch(err => {
+            alert(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+    } else {
+        document.exitFullscreen().catch(err => {
+            alert(`Error attempting to exit fullscreen: ${err.message}`);
+        });
+    }
+}
+
+// Listen for keydown event to toggle fullscreen when "F" is pressed
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'f' || event.key === 'F') {
+        toggleFullscreen();
+    }
+});
+
